@@ -1,1 +1,0 @@
-# GB_HW_django
