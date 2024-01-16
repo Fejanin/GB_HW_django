@@ -1,0 +1,21 @@
+{% extends "task2app/base.html" %}
+
+{% block content %}
+  <h2>Список продуктов клиента - {{ client }}.</h2>
+  <ol>
+    {% for good in goods %}
+    <li>
+      {{ good }}
+    </li>
+    {% endfor %}
+  </ol>
+  <h2>Список заказов:</h2>
+  <ol>
+    {% for order in orders %}
+    <li>
+      Заказ №{{ order.pk }}. Дата: {{ order.date }}.
+    </li>
+    {% endfor %}
+  </ol>
+
+{% endblock %}
