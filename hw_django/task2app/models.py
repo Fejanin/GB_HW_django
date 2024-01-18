@@ -2,6 +2,9 @@ from django.db import models
 
 
 # Create your models here.
+from hw_django.settings import MEDIA_ROOT
+
+
 class Client(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
@@ -16,6 +19,7 @@ class Good(models.Model):
     price = models.DecimalField(max_digits=8, decimal_places=2)
     count = models.IntegerField()
     date_added = models.DateTimeField(auto_now=True)
+    img = models.ImageField(null=True, blank=True, upload_to=MEDIA_ROOT)
 
 
 class Order(models.Model):
