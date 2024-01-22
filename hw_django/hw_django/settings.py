@@ -14,7 +14,6 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -25,6 +24,10 @@ SECRET_KEY = 'django-insecure-_6pp*j+y@up_xsa88lmxs_*0v+9peh%!uf_r6y=ak)_e%m*)5*
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
+# определяем место хранения изображений
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Application definition
 
