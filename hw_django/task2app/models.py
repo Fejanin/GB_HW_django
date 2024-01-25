@@ -12,6 +12,9 @@ class Client(models.Model):
     address = models.CharField(max_length=100)
     date = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.name
+
 
 class Good(models.Model):
     name = models.CharField(max_length=100)
@@ -21,9 +24,15 @@ class Good(models.Model):
     date_added = models.DateTimeField(auto_now=True)
     img = models.ImageField(null=True, blank=True, upload_to=MEDIA_ROOT)
 
+    def __str__(self):
+        return self.name
+
 
 class Order(models.Model):
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
     goods = models.ManyToManyField(Good)
     total = models.DecimalField(max_digits=8, decimal_places=2)
     date = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f'Зака №{self.id} (клиент - {self.client}).'
